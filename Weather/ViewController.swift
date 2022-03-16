@@ -69,7 +69,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     }
     
     func getCurrentWeather(lon: Double, lat: Double){
-        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=66bceca00b16dea5e419c84024d56a82") else { return }
+        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid={appKEY}") else { return }
         let session = URLSession(configuration: .default)
         session.dataTask(with: url) { [weak self] data, response, error in
             let successRange = (200..<300)
